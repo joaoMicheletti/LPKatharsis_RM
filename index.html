@@ -7,110 +7,690 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
     }
+    
     .animate-fade {
-      animation: fadeIn 1s ease-in-out;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in-out forwards;
     }
+    
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    .delay-5 { animation-delay: 1s; }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    .bg-gradient-katharsis {
+      background-image: url(asset/rodolroBGF.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-scale:hover {
+      transform: scale(1.03);
+    }
+    
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #b08c6d;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .testimonial-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .tool-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .section-divider {
+      height: 100px;
+      background: linear-gradient(to bottom right, transparent 49%, #3d7e5b 50%), linear-gradient(to top right, #3d7e5b 49%, transparent 50%);
+    }
+    
+    .floating-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      box-shadow: 0 10px 25px rgba(61, 126, 91, 0.3);
     }
   </style>
 </head>
-<body class="bg-[#f5f5f5] text-[#3d3d3d]">
+<body class="bg-gray-50 text-gray-800">
+  <!-- Floating WhatsApp Button -->
+  <a href="#formulario" class="floating-button bg-[#25D366] text-white rounded-full p-4 animate-pulse hover:bg-[#128C7E] transition">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <span class="text-2xl font-bold text-[#3d7e5b]">Katharsis</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="#home" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">Início</a>
+            <a href="#sobre" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">O Método</a>
+            <a href="#beneficios" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">Benefícios</a>
+            <a href="#terapeuta" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">Terapeuta</a>
+            <a href="#formulario" class="bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-2 px-6 rounded-full font-medium transition">Agendar</a>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+      <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+        <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Início</a>
+        <a href="#sobre" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">O Método</a>
+        <a href="#beneficios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Benefícios</a>
+        <a href="#terapeuta" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Terapeuta</a>
+        <a href="#formulario" class="block px-3 py-2 rounded-md text-base font-medium bg-[#b08c6d] text-white">Agendar</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="bg-[#3d7e5b] text-white py-24 px-6 text-center animate-fade">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">Você não precisa de mais esforço. Precisa se libertar do que te bloqueia.</h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Katharsis: desbloqueie sua mente, cure suas emoções e libere sua potência.</p>
-    <a href="#formulario" class="bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-4 px-8 rounded-full text-lg font-semibold transition">Quero desbloquear minha vida agora</a>
-  </section>
-
-  <!-- Dor e Identificação -->
-  <section class="py-16 px-6 bg-white animate-fade">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6 text-[#3d7e5b]">Você se identifica com alguma dessas situações?</h2>
-      <ul class="text-lg space-y-4">
-        <li>✅ Sente que a vida está parada mesmo tentando avançar</li>
-        <li>✅ Vive com baixa autoestima ou medo de julgamentos</li>
-        <li>✅ Sua vida financeira não anda, mesmo com esforço</li>
-        <li>✅ Se sabota ou procrastina nos momentos mais importantes</li>
-        <li>✅ Atrai relações tóxicas ou tem dificuldade em se abrir emocionalmente</li>
-      </ul>
+  <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 bg-gradient-katharsis text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="relative z-10">
+        <div class="animate-fade">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl">Você não precisa de mais esforço.<br>Precisa se <span class="text-[#b08c6d]">libertar</span> do que te bloqueia.</h1>
+          <p class="text-xl md:text-2xl mb-8 max-w-2xl opacity-90">Katharsis: desbloqueie sua mente, cure suas emoções e libere sua potência.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#formulario" class="bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale text-center">Quero desbloquear minha vida agora</a>
+            <a href="#sobre" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale text-center">Conhecer o método</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-0 right-0 w-full md:w-1/2 h-full flex items-end justify-end">
+      <img src="https://images.unsplash.com/photo-1604881991720-f91add95e1c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Liberdade emocional" class="h-full w-full object-cover opacity-20 md:opacity-100">
     </div>
   </section>
 
+  <!-- Dor e Identificação -->
+  <section id="dor" class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-fade">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#3d7e5b]">Você se identifica com alguma dessas situações?</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Estes são os principais sinais de que você precisa do processo Katharsis</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-1">
+          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-lock-open text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Sente que a vida está parada mesmo tentando avançar</h3>
+          <p class="text-gray-600">Sensação de esforço sem progresso real, como se algo invisível estivesse te segurando.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-2">
+          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-heart text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Vive com baixa autoestima ou medo de julgamentos</h3>
+          <p class="text-gray-600">A insegurança te impede de crescer e se expressar plenamente.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-3">
+          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-coins text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Sua vida financeira não anda, mesmo com esforço</h3>
+          <p class="text-gray-600">Trabalho sem retorno financeiro visível, como se o dinheiro fugisse de você.</p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-1">
+          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-hourglass-half text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Se sabota ou procrastina nos momentos mais importantes</h3>
+          <p class="text-gray-600">Você sabe o que precisa fazer, mas algo interno te paralisa na hora de agir.</p>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-2">
+          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-users text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Atrai relações tóxicas ou tem dificuldade em se abrir</h3>
+          <p class="text-gray-600">Os mesmos padrões negativos se repetem em seus relacionamentos.</p>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-3">
+          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-brain text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Traumas passados que ainda afetam seu presente</h3>
+          <p class="text-gray-600">Memórias dolorosas que continuam influenciando suas decisões atuais.</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16 animate-fade delay-4">
+        <a href="#formulario" class="inline-block bg-[#3d7e5b] hover:bg-[#2e6a4a] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale">Quero resolver essas questões</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider w-full"></div>
+
   <!-- Explicação do Método -->
-  <section class="py-16 px-6 bg-[#b1c4dc] text-[#3d3d3d] animate-fade">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">O que é o Método Katharsis?</h2>
-      <p class="text-lg mb-4">Uma metodologia terapêutica que une o poder da mente, da energia e do comportamento.</p>
-      <p class="text-lg mb-4">Utilizamos ferramentas como:</p>
-      <p class="font-semibold">PNL • Constelação Familiar • Hipnose Ericksoniana • Coaching Sistêmico • Apometria • Registro Akáshico</p>
+  <section id="sobre" class="py-16 md:py-24 px-6 bg-[#3d7e5b] text-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-fade">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">O que é o Método Katharsis?</h2>
+        <p class="text-xl max-w-3xl mx-auto opacity-90">Uma jornada de libertação emocional e transformação pessoal</p>
+      </div>
+      
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2 animate-fade">
+          <div class="bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-20">
+            <p class="text-lg mb-6">O <span class="font-bold">Método Katharsis</span> é uma imersão transformadora que une o que há de mais poderoso nas abordagens psicológicas, sistêmicas e neurocomportamentais.</p>
+            <p class="text-lg mb-6">Ele conduz o mentorado rumo ao seu objetivo central — com clareza, intensidade e resultados reais.</p>
+            <p class="text-lg">Por meio de análises profundas de comportamento e técnicas avançadas, o método ativa mudanças duradouras, quebra bloqueios inconscientes, crenças limitantes e libera o potencial que estava adormecido.</p>
+          </div>
+          
+          <div class="mt-8 grid sm:grid-cols-2 gap-4 animate-fade delay-2">
+            <div class="bg-white bg-opacity-10 rounded-xl p-4 flex items-center">
+              <div class="bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-check text-white"></i>
+              </div>
+              <span>Resultados rápidos</span>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-xl p-4 flex items-center">
+              <div class="bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-check text-white"></i>
+              </div>
+              <span>Abordagem holística</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2 animate-fade delay-1">
+          <div class="bg-white bg-opacity-5 rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-6 text-center">Ferramentas utilizadas</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="tool-card rounded-xl p-4 flex items-start">
+                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">PNL</h4>
+                  <p class="text-sm opacity-80">Reprogramação de padrões mentais</p>
+                </div>
+              </div>
+              
+              <div class="tool-card rounded-xl p-4 flex items-start">
+                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i class="fas fa-project-diagram"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Constelação</h4>
+                  <p class="text-sm opacity-80">Cura de relações familiares</p>
+                </div>
+              </div>
+              
+              <div class="tool-card rounded-xl p-4 flex items-start">
+                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i class="fas fa-magic"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Hipnose</h4>
+                  <p class="text-sm opacity-80">Acesso ao inconsciente</p>
+                </div>
+              </div>
+              
+              <div class="tool-card rounded-xl p-4 flex items-start">
+                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i class="fas fa-atom"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Apometria</h4>
+                  <p class="text-sm opacity-80">Cura energética multidimensional</p>
+                </div>
+              </div>
+              
+              <div class="tool-card rounded-xl p-4 flex items-start">
+                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i class="fas fa-book"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Registro Akáshico</h4>
+                  <p class="text-sm opacity-80">Acesso à memória da alma</p>
+                </div>
+              </div>
+              
+              <div class="tool-card rounded-xl p-4 flex items-start">
+                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Coaching Sistêmico</h4>
+                  <p class="text-sm opacity-80">Alinhamento com sistemas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Benefícios -->
-  <section class="py-16 px-6 bg-white animate-fade">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-center text-[#3d7e5b] mb-10">O que você ganha com o Katharsis</h2>
-      <div class="grid md:grid-cols-2 gap-8 text-lg">
-        <ul class="space-y-3">
-          <li>🌱 Liberação de traumas e bloqueios emocionais</li>
-          <li>🧠 Reprogramação mental para ação e clareza</li>
-          <li>🔥 Potencialização dos resultados pessoais e profissionais</li>
-        </ul>
-        <ul class="space-y-3">
-          <li>💎 Resgate do amor-próprio e autoconfiança</li>
-          <li>🔓 Quebra de padrões repetitivos inconscientes</li>
-          <li>💫 Reconexão com propósito e sentido de vida</li>
-        </ul>
+  <section id="beneficios" class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-fade">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#3d7e5b]">Transformações que você vai alcançar</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Os benefícios do processo Katharsis vão além do que você imagina</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Benefício 1 -->
+        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
+          <div class="text-[#b08c6d] text-4xl mb-4">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Liberação Emocional</h3>
+          <p class="text-gray-600">Cura de traumas, mágoas e emoções reprimidas que estavam te travando.</p>
+        </div>
+        
+        <!-- Benefício 2 -->
+        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
+          <div class="text-[#b08c6d] text-4xl mb-4">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Prosperidade Financeira</h3>
+          <p class="text-gray-600">Quebra de bloqueios que impediam o fluxo de abundância na sua vida.</p>
+        </div>
+        
+        <!-- Benefício 3 -->
+        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
+          <div class="text-[#b08c6d] text-4xl mb-4">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Relacionamentos Saudáveis</h3>
+          <p class="text-gray-600">Cura de padrões repetitivos que atraíam pessoas e situações tóxicas.</p>
+        </div>
+        
+        <!-- Benefício 4 -->
+        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
+          <div class="text-[#b08c6d] text-4xl mb-4">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Clareza Mental</h3>
+          <p class="text-gray-600">Eliminação da confusão mental e ganho de foco para suas metas.</p>
+        </div>
+        
+        <!-- Benefício 5 -->
+        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
+          <div class="text-[#b08c6d] text-4xl mb-4">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Energia Vital</h3>
+          <p class="text-gray-600">Recuperação da vitalidade e disposição para viver plenamente.</p>
+        </div>
+        
+        <!-- Benefício 6 -->
+        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
+          <div class="text-[#b08c6d] text-4xl mb-4">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Propósito de Vida</h3>
+          <p class="text-gray-600">Reconexão com sua missão pessoal e direção clara para o futuro.</p>
+        </div>
+      </div>
+      
+      <div class="mt-16 bg-[#f8f5f2] rounded-2xl p-8 md:p-12 animate-fade delay-4">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/3 text-center">
+            <div class="inline-flex items-center justify-center bg-[#3d7e5b] text-white w-24 h-24 rounded-full text-4xl mb-4">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="font-bold text-lg">"O Katharsis mudou minha vida em poucas sessões."</p>
+            <p class="text-sm text-gray-600">- Ana C., 34 anos</p>
+          </div>
+          <div class="md:w-2/3">
+            <h3 class="font-bold text-xl mb-4">Depoimento Real</h3>
+            <p class="text-gray-700 mb-4">"Antes do processo, eu me sentia travada em todas as áreas da minha vida. Tinha problemas financeiros, relacionamentos conturbados e uma sensação constante de que não era boa o suficiente."</p>
+            <p class="text-gray-700">"Depois do Katharsis, minha vida deu um giro de 180 graus. Em 3 meses, meu faturamento triplicou, me livrei de um relacionamento tóxico que durava anos e finalmente me senti em paz comigo mesma. A mudança foi tão visível que amigos e familiares comentaram sobre minha transformação."</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Terapeuta -->
-  <section class="py-16 px-6 bg-[#b08c6d] text-white animate-fade">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-6">Conheça seu mentor e terapeuta</h2>
-      <p class="text-lg text-center mb-4">Rodolfo Ramalho | Terapeuta Sistêmico</p>
-      <p class="text-center max-w-3xl mx-auto">Há mais de 20 anos comunicando palavras de cura e guiando processos de transformação. Com formação em hipnose, constelação, apometria e coaching sistêmico, Rodolfo criou o Método Katharsis para promover libertação emocional e alta performance pessoal.</p>
+  <section id="terapeuta" class="py-16 md:py-24 px-6 bg-[#f8f5f2]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/3 animate-fade">
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <img src="asset/about.jpg" alt="Rodolfo Ramalho" class="w-full h-auto">
+            <div class="p-6 text-center">
+              <h3 class="text-2xl font-bold mb-2">Rodolfo Ramalho</h3>
+              <p class="text-[#b08c6d] font-medium mb-4">Terapeuta Sistêmico</p>
+              <div class="flex justify-center space-x-4">
+                <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="text-gray-600 hover:text-[#3d7e5b]"><i class="fab fa-instagram text-xl"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-2/3 animate-fade delay-1">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#3d7e5b]">Conheça seu mentor e terapeuta</h2>
+          <p class="text-lg mb-6">Há mais de 20 anos comunicando palavras de cura e guiando processos de transformação. Com formação em hipnose, constelação, apometria e coaching sistêmico, Rodolfo criou o Método Katharsis para promover libertação emocional e alta performance pessoal.</p>
+          
+          <div class="mb-6">
+            <div class="flex items-start mb-4">
+              <div class="bg-[#3d7e5b] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                <i class="fas fa-check text-sm"></i>
+              </div>
+              <p>Mais de 30 anos de experiência em terapias holísticas e desenvolvimento humano</p>
+            </div>
+            <div class="flex items-start mb-4">
+              <div class="bg-[#3d7e5b] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                <i class="fas fa-check text-sm"></i>
+              </div>
+              <p>Formação em diversas abordagens terapêuticas e mais de 5.000 sessões realizadas</p>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-[#3d7e5b] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                <i class="fas fa-check text-sm"></i>
+              </div>
+              <p>Criador de metodologias exclusivas que aceleram o processo de cura e transformação</p>
+            </div>
+          </div>
+          
+          <blockquote class="border-l-4 border-[#b08c6d] pl-6 py-2 italic text-gray-700 mb-6">
+            "Meu propósito é guiar cada pessoa rumo à sua melhor versão, despertando consciência e liberdade para viver o seu SER sendo extraordinário."
+          </blockquote>
+          
+          <a href="#formulario" class="inline-block bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-3 px-8 rounded-full font-semibold transition hover-scale">Agendar sessão com Rodolfo</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Formulário (para WhatsApp) -->
-  <section id="formulario" class="py-20 px-6 bg-[#3d7e5b] text-white animate-fade">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-6">Agende sua sessão agora</h2>
-      <form id="katharsis-form" class="space-y-6">
-        <input id="nome" type="text" placeholder="Seu nome" class="w-full px-4 py-3 rounded text-[#3d3d3d]" required />
-        <input id="email" type="email" placeholder="Seu e-mail" class="w-full px-4 py-3 rounded text-[#3d3d3d]" required />
-        <input id="whatsapp" type="tel" placeholder="Seu número de WhatsApp" class="w-full px-4 py-3 rounded text-[#3d3d3d]" required />
-        <textarea id="mensagem" rows="4" placeholder="Compartilhe brevemente sua dor ou objetivo" class="w-full px-4 py-3 rounded text-[#3d3d3d]" required></textarea>
-        <button type="submit" class="bg-[#b08c6d] hover:bg-[#a47c5e] py-3 px-8 rounded-full font-semibold transition w-full">Quero iniciar meu processo</button>
-      </form>
+  <!-- FAQ -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 animate-fade">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#3d7e5b]">Perguntas Frequentes</h2>
+        <p class="text-lg text-gray-600">Tire suas dúvidas sobre o Método Katharsis</p>
+      </div>
+      
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-1">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+            <span class="font-semibold text-lg">Quantas sessões são necessárias para ver resultados?</span>
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-0">
+            <p class="text-gray-600">Os resultados variam de acordo com cada pessoa e a profundidade das questões a serem trabalhadas. Algumas pessoas relatam mudanças significativas já na primeira sessão, enquanto outras podem precisar de 3 a 5 sessões para consolidar a transformação desejada.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-2">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+            <span class="font-semibold text-lg">O método funciona online ou precisa ser presencial?</span>
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-0">
+            <p class="text-gray-600">O Método Katharsis funciona perfeitamente tanto online quanto presencial. As sessões online são realizadas por videoconferência com a mesma eficácia das presenciais, pois trabalhamos com o campo energético e mental que independe da localização física.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-3">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+            <span class="font-semibold text-lg">Preciso ter experiência com terapias para fazer?</span>
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-0">
+            <p class="text-gray-600">Não é necessário nenhum conhecimento prévio. O método é adaptável a qualquer pessoa, independente de sua experiência com processos terapêuticos. Rodolfo guiará todo o processo de forma segura e personalizada para suas necessidades.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-4">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
+            <span class="font-semibold text-lg">Quanto tempo dura cada sessão?</span>
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-0">
+            <p class="text-gray-600">Cada sessão tem duração média de 1h30, podendo variar conforme a necessidade do processo. O tempo é suficiente para identificar os padrões limitantes, realizar as intervenções necessárias e consolidar as mudanças.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12 animate-fade delay-5">
+        <p class="mb-6">Ainda tem dúvidas? Fale conosco pelo WhatsApp:</p>
+        <a href="https://wa.me/5511932223533" class="inline-block bg-[#25D366] hover:bg-[#128C7E] text-white py-3 px-8 rounded-full font-semibold transition hover-scale">
+          <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Script para WhatsApp -->
+  <!-- Formulário -->
+  <section id="formulario" class="py-16 md:py-24 px-6 bg-gradient-to-b from-[#3d7e5b] to-[#2e6a4a] text-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 animate-fade">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pronto para sua transformação?</h2>
+        <p class="text-xl opacity-90">Preencha o formulário abaixo e daremos início ao seu processo Katharsis</p>
+      </div>
+      
+      <div class="bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-20 animate-fade delay-1">
+        <form id="katharsis-form" class="space-y-6">
+          <div>
+            <label for="nome" class="block mb-2 font-medium">Seu nome completo</label>
+            <input id="nome" type="text" placeholder="Como gostaria de ser chamado" class="w-full px-5 py-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-30 focus:outline-none transition placeholder-white placeholder-opacity-70" required />
+          </div>
+          
+          <div>
+            <label for="email" class="block mb-2 font-medium">Seu melhor e-mail</label>
+            <input id="email" type="email" placeholder="Seu e-mail principal" class="w-full px-5 py-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-30 focus:outline-none transition placeholder-white placeholder-opacity-70" required />
+          </div>
+          
+          <div>
+            <label for="whatsapp" class="block mb-2 font-medium">WhatsApp</label>
+            <input id="whatsapp" type="tel" placeholder="(DDD) + número" class="w-full px-5 py-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-30 focus:outline-none transition placeholder-white placeholder-opacity-70" required />
+          </div>
+          
+          <div>
+            <label for="mensagem" class="block mb-2 font-medium">Qual sua principal dor ou objetivo?</label>
+            <textarea id="mensagem" rows="4" placeholder="Descreva brevemente o que você gostaria de transformar" class="w-full px-5 py-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-30 focus:outline-none transition placeholder-white placeholder-opacity-70" required></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale flex items-center justify-center">
+            <span>Quero iniciar meu processo</span>
+            <i class="fas fa-arrow-right ml-3"></i>
+          </button>
+        </form>
+      </div>
+      
+      <div class="text-center mt-12 animate-fade delay-2">
+        <div class="inline-flex items-center bg-white bg-opacity-20 rounded-full px-6 py-3">
+          <i class="fas fa-lock mr-2"></i>
+          <span>Seus dados estão 100% seguros conosco</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#2a2a2a] text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold text-[#b08c6d] mb-4">Katharsis</h3>
+          <p class="opacity-80">Liberte sua mente, cure suas emoções e libere sua potência.</p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Links Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Início</a></li>
+            <li><a href="#sobre" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">O Método</a></li>
+            <li><a href="#beneficios" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Benefícios</a></li>
+            <li><a href="#terapeuta" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Terapeuta</a></li>
+            <li><a href="#formulario" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Agendar</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Contato</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-3 text-[#b08c6d]"></i>
+              <span class="opacity-80">contato@metodokatharsis.com</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fab fa-whatsapp mr-3 text-[#b08c6d]"></i>
+              <span class="opacity-80">(11) 93222-3533</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Redes Sociais</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="bg-[#3d3d3d] hover:bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-[#3d3d3d] mt-12 pt-8 text-center opacity-70 text-sm">
+        <p>&copy; 2023 Método Katharsis. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
   <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+    
+    // FAQ toggle
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        
+        content.classList.toggle('hidden');
+        icon.classList.toggle('transform');
+        icon.classList.toggle('rotate-180');
+      });
+    });
+    
+    // Form submission for WhatsApp
     document.getElementById('katharsis-form').addEventListener('submit', function(e) {
       e.preventDefault();
-
+      
       const nome = document.getElementById('nome').value;
       const email = document.getElementById('email').value;
       const whatsapp = document.getElementById('whatsapp').value;
       const mensagem = document.getElementById('mensagem').value;
-
+      
       const texto = `Olá! Gostaria de saber mais sobre o Método Katharsis.%0A%0A*Nome:* ${nome}%0A*E-mail:* ${email}%0A*WhatsApp:* ${whatsapp}%0A*Mensagem:* ${mensagem}`;
       const url = `https://wa.me/5511932223533?text=${encodeURIComponent(texto)}`;
       window.open(url, '_blank');
     });
+    
+    // Scroll animations
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-fade');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
   </script>
-
 </body>
 </html>
