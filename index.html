@@ -42,7 +42,7 @@
     }
     
     .bg-gradient-katharsis {
-      background-image: url(asset/rodolroBGF.png);
+      background-image: url(asset/rodolroBGF.webp);
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -87,18 +87,13 @@
     
     .testimonial-card {
       background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.918);
     }
     
     .tool-card {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .section-divider {
-      height: 100px;
-      background: linear-gradient(to bottom right, transparent 49%, #3d7e5b 50%), linear-gradient(to top right, #3d7e5b 49%, transparent 50%);
     }
     
     .floating-button {
@@ -108,145 +103,247 @@
       z-index: 99;
       box-shadow: 0 10px 25px rgba(61, 126, 91, 0.3);
     }
+    .wave-text {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+      max-width: 800px;
+    }
+
+    .wave-text span {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: wave 0.5s forwards;
+      display: inline-block;
+    }
+    .BGT {
+      background-color: #ffffff2f;
+      backdrop-filter: blur(5px);
+      box-shadow: 2px 2px 2px green;
+      cursor: pointer;
+    }
+    .bgT:hover{
+      cursor: pointer;
+      box-shadow: 2px 2px 15px green;
+    }
+    .BGT:hover {
+      box-shadow: 2px 2px 15px green;
+    }
+    .Btn1:hover{
+      box-shadow: 2px 2px 10px green;
+    }
+    #sobre {
+      background-image: url(asset/rr.webp);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .FAQ {
+      background-image: url(asset/fundofaq.webp);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @keyframes wave {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body style="background-color: #141414;">
   <!-- Floating WhatsApp Button -->
   <a href="#formulario" class="floating-button bg-[#25D366] text-white rounded-full p-4 animate-pulse hover:bg-[#128C7E] transition">
     <i class="fab fa-whatsapp text-2xl"></i>
   </a>
-
-  <!-- Navigation -->
-  <nav class="bg-white shadow-md fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-20 items-center">
-        <div class="flex-shrink-0 flex items-center">
-          <span class="text-2xl font-bold text-[#3d7e5b]">Katharsis</span>
-        </div>
-        <div class="hidden md:block">
-          <div class="ml-10 flex items-center space-x-8">
-            <a href="#home" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">Início</a>
-            <a href="#sobre" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">O Método</a>
-            <a href="#beneficios" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">Benefícios</a>
-            <a href="#terapeuta" class="nav-link text-gray-800 hover:text-[#3d7e5b] font-medium">Terapeuta</a>
-            <a href="#formulario" class="bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-2 px-6 rounded-full font-medium transition">Agendar</a>
-          </div>
-        </div>
-        <div class="md:hidden">
-          <button id="menu-toggle" class="text-gray-800 focus:outline-none">
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-      <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
-        <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Início</a>
-        <a href="#sobre" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">O Método</a>
-        <a href="#beneficios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Benefícios</a>
-        <a href="#terapeuta" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Terapeuta</a>
-        <a href="#formulario" class="block px-3 py-2 rounded-md text-base font-medium bg-[#b08c6d] text-white">Agendar</a>
-      </div>
-    </div>
-  </nav>
 
   <!-- Hero Section -->
   <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 bg-gradient-katharsis text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class="relative z-10">
         <div class="animate-fade">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl">Você não precisa de mais esforço.<br>Precisa se <span class="text-[#b08c6d]">libertar</span> do que te bloqueia.</h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-2xl opacity-90">Katharsis: desbloqueie sua mente, cure suas emoções e libere sua potência.</p>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-3xl wave-text">
+            <!-- Primeira frase -->
+            <span style="animation-delay:0s">V</span>
+            <span style="animation-delay:0.05s">o</span>
+            <span style="animation-delay:0.1s">c</span>
+            <span style="animation-delay:0.15s">ê</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.25s">n</span>
+            <span style="animation-delay:0.3s">ã</span>
+            <span style="animation-delay:0.35s">o</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.45s">p</span>
+            <span style="animation-delay:0.5s">r</span>
+            <span style="animation-delay:0.55s">e</span>
+            <span style="animation-delay:0.6s">c</span>
+            <span style="animation-delay:0.65s">i</span>
+            <span style="animation-delay:0.7s">s</span>
+            <span style="animation-delay:0.75s">a</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.85s">d</span>
+            <span style="animation-delay:0.9s">e</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <br>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:1s">m</span>
+            <span style="animation-delay:1.05s">a</span>
+            <span style="animation-delay:1.1s">i</span>
+            <span style="animation-delay:1.15s">s</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:1.25s">e</span>
+            <span style="animation-delay:1.3s">s</span>
+            <span style="animation-delay:1.35s">f</span>
+            <span style="animation-delay:1.4s">o</span>
+            <span style="animation-delay:1.45s">r</span>
+            <span style="animation-delay:1.5s">ç</span>
+            <span style="animation-delay:1.55s">o</span>
+            <span style="animation-delay:1.6s">.</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+
+            <!-- Quebra de linha -->
+             <p> <br/></p>
+            <br>
+
+            <!-- Segunda frase -->
+            <span style="animation-delay:1.7s">P</span>
+            <span style="animation-delay:1.75s">r</span>
+            <span style="animation-delay:1.8s">e</span>
+            <span style="animation-delay:1.85s">c</span>
+            <span style="animation-delay:1.9s">i</span>
+            <span style="animation-delay:1.95s">s</span>
+            <span style="animation-delay:2s">a</span>
+            
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:2.1s">s</span>
+            <span style="animation-delay:2.15s">e</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:2.2s"> </span>
+            <span style="animation-delay:2.25s">l</span>
+            <span style="animation-delay:2.3s">i</span>
+            <span style="animation-delay:2.35s">b</span>
+            <span style="animation-delay:2.4s">e</span>
+            <span style="animation-delay:2.45s">r</span>
+            <span style="animation-delay:2.5s">t</span>
+            <span style="animation-delay:2.55s">a</span>
+            <span style="animation-delay:2.6s">r</span>
+            <span style="animation-delay:2.65s"> </span>
+            <span style="animation-delay:2.7s">d</span>
+            <span style="animation-delay:2.75s">o</span>
+            <span style="animation-delay:0.2s">&nbsp;</span>
+            <span style="animation-delay:2.85s"> que te bloqueia</span>
+            <sp style="animation-delay:3.6s">.</span>
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 max-w-2xl opacity-90"><strong>Katharsis:</strong> desbloqueie sua <strong>mente,</strong>  cure suas emoções e libere sua <strong>potência.</strong></p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#formulario" class="bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale text-center">Quero desbloquear minha vida agora</a>
-            <a href="#sobre" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale text-center">Conhecer o método</a>
+            <a href="#formulario" class=" Btn1 inline-block bg-[#3d7e5b] hover:bg-[#2e6a4a] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale">Quero desbloquear minha vida agora</a>
+            <a href="#sobre" class="bgT bg-white bg-opacity-20 hover:bg-opacity-30 text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale text-center">Conhecer o método</a>
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="absolute bottom-0 right-0 w-full md:w-1/2 h-full flex items-end justify-end">
-      <img src="https://images.unsplash.com/photo-1604881991720-f91add95e1c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Liberdade emocional" class="h-full w-full object-cover opacity-20 md:opacity-100">
     </div>
   </section>
 
   <!-- Dor e Identificação -->
-  <section id="dor" class="py-16 md:py-24 px-6 bg-white">
+  <section id="dor" class="py-16 md:py-24 px-6 ">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#3d7e5b]">Você se identifica com alguma dessas situações?</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Estes são os principais sinais de que você precisa do processo Katharsis</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-5 text-white">Você se identifica com alguma dessas situações?</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto text-white">Estes são os principais sinais de que você precisa do processo Katharsis</p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-1">
+        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-1">
           <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
             <i class="fas fa-lock-open text-2xl"></i>
           </div>
-          <h3 class="font-semibold text-xl mb-3">Sente que a vida está parada mesmo tentando avançar</h3>
-          <p class="text-gray-600">Sensação de esforço sem progresso real, como se algo invisível estivesse te segurando.</p>
+          <h3 class="font-semibold text-xl mb-3 text-white">Sente que a vida está parada mesmo tentando avançar</h3>
+          <p style="color:white">Sensação de esforço sem progresso real, como se algo invisível estivesse te segurando.</p>
         </div>
         
         <!-- Card 2 -->
-        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-2">
+        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-2">
           <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
             <i class="fas fa-heart text-2xl"></i>
           </div>
-          <h3 class="font-semibold text-xl mb-3">Vive com baixa autoestima ou medo de julgamentos</h3>
-          <p class="text-gray-600">A insegurança te impede de crescer e se expressar plenamente.</p>
+          <h3 class="font-semibold text-xl mb-3 text-white">Vive com baixa autoestima ou medo de julgamentos</h3>
+          <p style="color:white">A insegurança te impede de crescer e se expressar plenamente.</p>
         </div>
         
         <!-- Card 3 -->
-        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-3">
+        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-3">
           <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
             <i class="fas fa-coins text-2xl"></i>
           </div>
-          <h3 class="font-semibold text-xl mb-3">Sua vida financeira não anda, mesmo com esforço</h3>
-          <p class="text-gray-600">Trabalho sem retorno financeiro visível, como se o dinheiro fugisse de você.</p>
+          <h3 class="font-semibold text-xl mb-3 text-white">Sua vida financeira não anda, mesmo com esforço</h3>
+          <p style="color:white">Trabalho sem retorno financeiro visível, como se o dinheiro fugisse de você.</p>
         </div>
         
         <!-- Card 4 -->
-        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-1">
+        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-1">
           <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
             <i class="fas fa-hourglass-half text-2xl"></i>
           </div>
-          <h3 class="font-semibold text-xl mb-3">Se sabota ou procrastina nos momentos mais importantes</h3>
-          <p class="text-gray-600">Você sabe o que precisa fazer, mas algo interno te paralisa na hora de agir.</p>
+          <h3 class="font-semibold text-xl mb-3 text-white">Se sabota ou procrastina nos momentos mais importantes</h3>
+          <p style="color:white">Você sabe o que precisa fazer, mas algo interno te paralisa na hora de agir.</p>
         </div>
         
         <!-- Card 5 -->
-        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-2">
+        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-2">
           <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
             <i class="fas fa-users text-2xl"></i>
           </div>
-          <h3 class="font-semibold text-xl mb-3">Atrai relações tóxicas ou tem dificuldade em se abrir</h3>
-          <p class="text-gray-600">Os mesmos padrões negativos se repetem em seus relacionamentos.</p>
+          <h3 class="font-semibold text-xl mb-3 text-white">Atrai relações tóxicas ou tem dificuldade em se abrir</h3>
+          <p style="color:white">Os mesmos padrões negativos se repetem em seus relacionamentos.</p>
         </div>
         
         <!-- Card 6 -->
-        <div class="bg-white rounded-xl shadow-lg p-6 hover-scale transition animate-fade delay-3">
+        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-3">
           <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
             <i class="fas fa-brain text-2xl"></i>
           </div>
-          <h3 class="font-semibold text-xl mb-3">Traumas passados que ainda afetam seu presente</h3>
-          <p class="text-gray-600">Memórias dolorosas que continuam influenciando suas decisões atuais.</p>
+          <h3 class="font-semibold text-xl mb-3 text-white">Traumas passados que ainda afetam seu presente</h3>
+          <p style="color:white">Memórias dolorosas que continuam influenciando suas decisões atuais.</p>
         </div>
       </div>
       
       <div class="text-center mt-16 animate-fade delay-4">
-        <a href="#formulario" class="inline-block bg-[#3d7e5b] hover:bg-[#2e6a4a] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale">Quero resolver essas questões</a>
+        <a href="#formulario" class=" Btn1 inline-block bg-[#3d7e5b] hover:bg-[#2e6a4a] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale">Quero resolver essas questões</a>
       </div>
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="section-divider w-full"></div>
 
   <!-- Explicação do Método -->
-  <section id="sobre" class="py-16 md:py-24 px-6 bg-[#3d7e5b] text-white">
+  <section id="sobre" class=" sobre py-16 md:py-24 px-6 text-white">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 animate-fade">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">O que é o Método Katharsis?</h2>
@@ -263,13 +360,13 @@
           
           <div class="mt-8 grid sm:grid-cols-2 gap-4 animate-fade delay-2">
             <div class="bg-white bg-opacity-10 rounded-xl p-4 flex items-center">
-              <div class="bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <div class="bg-[#3d7e5b] w-10 h-10 rounded-full flex items-center justify-center mr-4">
                 <i class="fas fa-check text-white"></i>
               </div>
               <span>Resultados rápidos</span>
             </div>
             <div class="bg-white bg-opacity-10 rounded-xl p-4 flex items-center">
-              <div class="bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center mr-4">
+              <div class="bg-[#3d7e5b] w-10 h-10 rounded-full flex items-center justify-center mr-4">
                 <i class="fas fa-check text-white"></i>
               </div>
               <span>Abordagem holística</span>
@@ -282,7 +379,7 @@
             <h3 class="text-xl font-bold mb-6 text-center">Ferramentas utilizadas</h3>
             <div class="grid md:grid-cols-2 gap-6">
               <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <i class="fas fa-brain"></i>
                 </div>
                 <div>
@@ -292,7 +389,7 @@
               </div>
               
               <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <i class="fas fa-project-diagram"></i>
                 </div>
                 <div>
@@ -302,7 +399,7 @@
               </div>
               
               <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <i class="fas fa-magic"></i>
                 </div>
                 <div>
@@ -312,7 +409,7 @@
               </div>
               
               <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <i class="fas fa-atom"></i>
                 </div>
                 <div>
@@ -322,7 +419,7 @@
               </div>
               
               <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <i class="fas fa-book"></i>
                 </div>
                 <div>
@@ -332,7 +429,7 @@
               </div>
               
               <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#b08c6d] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
                   <i class="fas fa-balance-scale"></i>
                 </div>
                 <div>
@@ -348,17 +445,17 @@
   </section>
 
   <!-- Benefícios -->
-  <section id="beneficios" class="py-16 md:py-24 px-6 bg-white">
+  <section id="beneficios" class="py-16 md:py-24 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#3d7e5b]">Transformações que você vai alcançar</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Os benefícios do processo Katharsis vão além do que você imagina</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Transformações que você vai alcançar</h2>
+        <p class="text-lg text-white max-w-2xl mx-auto">Os benefícios do processo Katharsis vão além do que você imagina</p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Benefício 1 -->
-        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
-          <div class="text-[#b08c6d] text-4xl mb-4">
+        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
+          <div class="text-[#3d7e5b] text-4xl mb-4">
             <i class="fas fa-heartbeat"></i>
           </div>
           <h3 class="font-bold text-xl mb-3">Liberação Emocional</h3>
@@ -366,8 +463,8 @@
         </div>
         
         <!-- Benefício 2 -->
-        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
-          <div class="text-[#b08c6d] text-4xl mb-4">
+        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
+          <div class="text-[#3d7e5b] text-4xl mb-4">
             <i class="fas fa-chart-line"></i>
           </div>
           <h3 class="font-bold text-xl mb-3">Prosperidade Financeira</h3>
@@ -375,8 +472,8 @@
         </div>
         
         <!-- Benefício 3 -->
-        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
-          <div class="text-[#b08c6d] text-4xl mb-4">
+        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
+          <div class="text-[#3d7e5b] text-4xl mb-4">
             <i class="fas fa-users"></i>
           </div>
           <h3 class="font-bold text-xl mb-3">Relacionamentos Saudáveis</h3>
@@ -384,8 +481,8 @@
         </div>
         
         <!-- Benefício 4 -->
-        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
-          <div class="text-[#b08c6d] text-4xl mb-4">
+        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
+          <div class="text-[#3d7e5b] text-4xl mb-4">
             <i class="fas fa-brain"></i>
           </div>
           <h3 class="font-bold text-xl mb-3">Clareza Mental</h3>
@@ -393,8 +490,8 @@
         </div>
         
         <!-- Benefício 5 -->
-        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
-          <div class="text-[#b08c6d] text-4xl mb-4">
+        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
+          <div class="text-[#3d7e5b] text-4xl mb-4">
             <i class="fas fa-bolt"></i>
           </div>
           <h3 class="font-bold text-xl mb-3">Energia Vital</h3>
@@ -402,8 +499,8 @@
         </div>
         
         <!-- Benefício 6 -->
-        <div class="bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
-          <div class="text-[#b08c6d] text-4xl mb-4">
+        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
+          <div class="text-[#3d7e5b] text-4xl mb-4">
             <i class="fas fa-star"></i>
           </div>
           <h3 class="font-bold text-xl mb-3">Propósito de Vida</h3>
@@ -411,7 +508,7 @@
         </div>
       </div>
       
-      <div class="mt-16 bg-[#f8f5f2] rounded-2xl p-8 md:p-12 animate-fade delay-4">
+      <div class="bgT mt-16 bg-[#f8f5f2] rounded-2xl p-8 md:p-12 animate-fade delay-4">
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div class="md:w-1/3 text-center">
             <div class="inline-flex items-center justify-center bg-[#3d7e5b] text-white w-24 h-24 rounded-full text-4xl mb-4">
@@ -431,15 +528,14 @@
   </section>
 
   <!-- Terapeuta -->
-  <section id="terapeuta" class="py-16 md:py-24 px-6 bg-[#f8f5f2]">
+  <section id="terapeuta" class="py-16 md:py-24 px-6 ">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <div class="lg:w-1/3 animate-fade">
-          <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <img src="asset/about.jpg" alt="Rodolfo Ramalho" class="w-full h-auto">
+        <div class=" lg:w-1/3 animate-fade">
+          <div class="rounded-2xl shadow-xl overflow-hidden">
+            <img src="asset/about.webp" alt="Rodolfo Ramalho" class="w-full h-auto">
             <div class="p-6 text-center">
-              <h3 class="text-2xl font-bold mb-2">Rodolfo Ramalho</h3>
-              <p class="text-[#b08c6d] font-medium mb-4">Terapeuta Sistêmico</p>
+              <h3 class="text-2xl font-bold mb-2 text-white">Rodolfo Ramalho</h3>
               <div class="flex justify-center space-x-4">
                 <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="text-gray-600 hover:text-[#3d7e5b]"><i class="fab fa-instagram text-xl"></i></a>
               </div>
@@ -447,54 +543,54 @@
           </div>
         </div>
         
-        <div class="lg:w-2/3 animate-fade delay-1">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#3d7e5b]">Conheça seu mentor e terapeuta</h2>
-          <p class="text-lg mb-6">Há mais de 20 anos comunicando palavras de cura e guiando processos de transformação. Com formação em hipnose, constelação, apometria e coaching sistêmico, Rodolfo criou o Método Katharsis para promover libertação emocional e alta performance pessoal.</p>
+        <div class=" lg:w-2/3 animate-fade delay-1">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Conheça seu mentor e terapeuta</h2>
+          <p class="text-white mb-6">Há mais de 20 anos comunicando palavras de cura e guiando processos de transformação. Com formação em hipnose, constelação, apometria e coaching sistêmico, Rodolfo criou o Método Katharsis para promover libertação emocional e alta performance pessoal.</p>
           
           <div class="mb-6">
             <div class="flex items-start mb-4">
               <div class="bg-[#3d7e5b] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                 <i class="fas fa-check text-sm"></i>
               </div>
-              <p>Mais de 30 anos de experiência em terapias holísticas e desenvolvimento humano</p>
+              <p class="text-white">Mais de 30 anos de experiência em terapias holísticas e desenvolvimento humano</p>
             </div>
             <div class="flex items-start mb-4">
               <div class="bg-[#3d7e5b] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                 <i class="fas fa-check text-sm"></i>
               </div>
-              <p>Formação em diversas abordagens terapêuticas e mais de 5.000 sessões realizadas</p>
+              <p class="text-white">Formação em diversas abordagens terapêuticas e mais de 5.000 sessões realizadas</p>
             </div>
             <div class="flex items-start">
               <div class="bg-[#3d7e5b] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                 <i class="fas fa-check text-sm"></i>
               </div>
-              <p>Criador de metodologias exclusivas que aceleram o processo de cura e transformação</p>
+              <p class="text-white">Criador de metodologias exclusivas que aceleram o processo de cura e transformação</p>
             </div>
           </div>
           
-          <blockquote class="border-l-4 border-[#b08c6d] pl-6 py-2 italic text-gray-700 mb-6">
+          <blockquote class="border-l-4 border-[#3d7e5b] pl-6 py-2 italic text-gray-700 mb-6 text-white ">
             "Meu propósito é guiar cada pessoa rumo à sua melhor versão, despertando consciência e liberdade para viver o seu SER sendo extraordinário."
           </blockquote>
           
-          <a href="#formulario" class="inline-block bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-3 px-8 rounded-full font-semibold transition hover-scale">Agendar sessão com Rodolfo</a>
+          <a href="#formulario" class="bgT inline-block bg-[#3d7e5b]  text-white py-3 px-8 rounded-full font-semibold transition hover-scale">Agendar sessão com Rodolfo</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="py-16 md:py-24 px-6 bg-white">
+  <section class="FAQ py-16 md:py-24 px-6 ">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#3d7e5b]">Perguntas Frequentes</h2>
-        <p class="text-lg text-gray-600">Tire suas dúvidas sobre o Método Katharsis</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Perguntas Frequentes</h2>
+        <p class="text-lg text-white">Tire suas dúvidas sobre o Método Katharsis</p>
       </div>
       
       <div class="space-y-4">
         <!-- FAQ Item 1 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-1">
           <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-lg">Quantas sessões são necessárias para ver resultados?</span>
+            <span class="font-semibold text-white">Quantas sessões são necessárias para ver resultados?</span>
             <i class="fas fa-chevron-down transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-6 pt-0">
@@ -505,7 +601,7 @@
         <!-- FAQ Item 2 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-2">
           <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-lg">O método funciona online ou precisa ser presencial?</span>
+            <span class="font-semibold text-white">O método funciona online ou precisa ser presencial?</span>
             <i class="fas fa-chevron-down transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-6 pt-0">
@@ -516,7 +612,7 @@
         <!-- FAQ Item 3 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-3">
           <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-lg">Preciso ter experiência com terapias para fazer?</span>
+            <span class="font-semibold text-white">Preciso ter experiência com terapias para fazer?</span>
             <i class="fas fa-chevron-down transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-6 pt-0">
@@ -527,7 +623,7 @@
         <!-- FAQ Item 4 -->
         <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-4">
           <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-lg">Quanto tempo dura cada sessão?</span>
+            <span class="font-semibold text-white">Quanto tempo dura cada sessão?</span>
             <i class="fas fa-chevron-down transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-6 pt-0">
@@ -538,7 +634,7 @@
       
       <div class="text-center mt-12 animate-fade delay-5">
         <p class="mb-6">Ainda tem dúvidas? Fale conosco pelo WhatsApp:</p>
-        <a href="https://wa.me/5511932223533" class="inline-block bg-[#25D366] hover:bg-[#128C7E] text-white py-3 px-8 rounded-full font-semibold transition hover-scale">
+        <a href="https://wa.me/5511932223533" class="bgT inline-block bg-[#25D366] hover:bg-[#128C7E] text-white py-3 px-8 rounded-full font-semibold transition hover-scale">
           <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
         </a>
       </div>
@@ -546,7 +642,7 @@
   </section>
 
   <!-- Formulário -->
-  <section id="formulario" class="py-16 md:py-24 px-6 bg-gradient-to-b from-[#3d7e5b] to-[#2e6a4a] text-white">
+  <section id="formulario" class="py-16 md:py-24 px-6  text-white">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12 animate-fade">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Pronto para sua transformação?</h2>
@@ -575,15 +671,15 @@
             <textarea id="mensagem" rows="4" placeholder="Descreva brevemente o que você gostaria de transformar" class="w-full px-5 py-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-30 focus:outline-none transition placeholder-white placeholder-opacity-70" required></textarea>
           </div>
           
-          <button type="submit" class="w-full bg-[#b08c6d] hover:bg-[#a47c5e] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale flex items-center justify-center">
+          <button type="submit" class="bgT bg-[#3d7e5b] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale flex items-center justify-center">
             <span>Quero iniciar meu processo</span>
             <i class="fas fa-arrow-right ml-3"></i>
           </button>
         </form>
       </div>
       
-      <div class="text-center mt-12 animate-fade delay-2">
-        <div class="inline-flex items-center bg-white bg-opacity-20 rounded-full px-6 py-3">
+      <div class=" text-center mt-12 animate-fade delay-2">
+        <div class="bgT inline-flex items-center bg-white bg-opacity-20 rounded-full px-6 py-3">
           <i class="fas fa-lock mr-2"></i>
           <span>Seus dados estão 100% seguros conosco</span>
         </div>
@@ -596,12 +692,12 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-12">
         <div>
-          <h3 class="text-2xl font-bold text-[#b08c6d] mb-4">Katharsis</h3>
+          <h3 class="text-2xl font-bold text-[#25D366] mb-4">Katharsis</h3>
           <p class="opacity-80">Liberte sua mente, cure suas emoções e libere sua potência.</p>
         </div>
         
         <div>
-          <h4 class="font-bold mb-4">Links Rápidos</h4>
+          <h4 class="text-[#25D366] font-bold mb-4">Links Rápidos</h4>
           <ul class="space-y-2">
             <li><a href="#home" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Início</a></li>
             <li><a href="#sobre" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">O Método</a></li>
@@ -612,31 +708,31 @@
         </div>
         
         <div>
-          <h4 class="font-bold mb-4">Contato</h4>
+          <h4 class="text-[#25D366] font-bold mb-4">Contato</h4>
           <ul class="space-y-2">
-            <li class="flex items-center">
-              <i class="fas fa-envelope mr-3 text-[#b08c6d]"></i>
+            <li class=" flex items-center">
+              <i class="text-[#25D366] fas fa-envelope mr-3 "></i>
               <span class="opacity-80">contato@metodokatharsis.com</span>
             </li>
             <li class="flex items-center">
-              <i class="fab fa-whatsapp mr-3 text-[#b08c6d]"></i>
+              <i class="fab fa-whatsapp mr-3 text-[#25D366]"></i>
               <span class="opacity-80">(11) 93222-3533</span>
             </li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-bold mb-4">Redes Sociais</h4>
+          <h4 class="text-[#25D366] font-bold mb-4">Redes Sociais</h4>
           <div class="flex space-x-4">
-            <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="bg-[#3d3d3d] hover:bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center transition">
-              <i class="fab fa-instagram"></i>
+            <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="text-[#25D366] hover:bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center transition">
+              <i class=" fab fa-instagram"></i>
             </a>
           </div>
         </div>
       </div>
       
       <div class="border-t border-[#3d3d3d] mt-12 pt-8 text-center opacity-70 text-sm">
-        <p>&copy; 2023 Método Katharsis. Todos os direitos reservados.</p>
+        <p class="text-[#25D366]">&copy; 2023 Método Katharsis. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
