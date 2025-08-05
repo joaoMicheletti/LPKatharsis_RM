@@ -14,6 +14,7 @@
     body {
       font-family: 'Montserrat', sans-serif;
       scroll-behavior: smooth;
+      background-color: #141414;
     }
     
     .animate-fade {
@@ -42,10 +43,124 @@
     }
     
     .bg-gradient-katharsis {
+      height: 100vh;
       background-image: url(asset/rodolroBGF.webp);
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
+    }
+    
+    .homeContainer {
+      margin-top: 100px;
+      margin-left: 5%;
+      width: 40%;
+    }
+    
+    .logoRr{
+      width: 10%;
+      margin-bottom: 20px;
+    }
+    
+    .title{
+      font-size: 40px;
+    }
+    
+    .titlerColor{
+      color:#D98218;
+      text-decoration: underline;
+    }
+    
+    .texto{
+      font-size: 23px;
+      line-height: 25px;
+      margin-bottom: 20px;
+    }
+    
+    D{
+      font-weight: 900;
+      color:#D98218;
+    }
+    
+    .text2 {
+      line-height: 17px;
+    }
+    
+    .container3cards {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .cardcontainer {
+      text-align: center;
+      width: 30%;
+      height: 80px;
+      padding-top: 10px;
+      font-weight: 666;
+      border-radius:100%;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: end;
+    }
+    
+    .divisorBar{
+      width: 100%;
+      padding: 1px;
+      color: #D98218;
+      background-color: #D98218;
+      box-shadow: 2px 2px 15px #A6550F;
+      font-size: 1px;
+    }
+    
+    .corpoCartContainer {
+      margin-top: 10px;
+    }
+    
+    .Traco{
+      width: 100%;
+      background-color: #A6550F;
+      font-size: 3px;
+      color: #A6550F;
+      box-shadow: 2px 2px 15px #A6550F;
+      border-radius: 10px;
+      bottom: 0;
+    }
+    
+    #dor{
+      height: auto;
+      background-image: url(asset/quem.webp);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .dorContainer {
+      width: 40%;
+      margin-left: 50%;
+    }
+    
+    .cardsParaQuem {
+      margin-top: 60px;
+    }
+    
+    .last {
+      width: 100%;
+      margin-top: 30px;
+    }
+    
+    .TollBorder {
+      box-shadow: 2px 2px 15px #A6550F;
+    }
+    
+    .btnParaQuem{
+      border-radius: 15px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #A6550F, #D98218);
+    }
+    
+    .btnParaQuem:hover{
+      box-shadow: 2px 2px 15px #A6550F;
     }
     
     .hover-scale {
@@ -103,433 +218,501 @@
       z-index: 99;
       box-shadow: 0 10px 25px rgba(61, 126, 91, 0.3);
     }
+    
     .wave-text {
       display: flex;
       flex-wrap: wrap;
-      font-size: 2.5rem;
       font-weight: bold;
       line-height: 1.2;
       max-width: 800px;
     }
-
+    
     .wave-text span {
       opacity: 0;
       transform: translateY(20px);
       animation: wave 0.5s forwards;
       display: inline-block;
     }
+    
     .BGT {
       background-color: #ffffff2f;
       backdrop-filter: blur(5px);
       box-shadow: 2px 2px 2px green;
       cursor: pointer;
     }
+    
     .bgT:hover{
       cursor: pointer;
       box-shadow: 2px 2px 15px green;
     }
+    
     .BGT:hover {
       box-shadow: 2px 2px 15px green;
     }
+    
     .Btn1:hover{
       box-shadow: 2px 2px 10px green;
     }
+    
     #sobre {
-      background-image: url(asset/rr.webp);
+      height: 100vh;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
     }
+    
     .FAQ {
       background-image: url(asset/fundofaq.webp);
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
     }
-
+    
     @keyframes wave {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+    
     .title{
-      font-size: 40pxpx;
+      font-size: 40px;
+    }
+    
+    .divisorBarForms{
+      width: 100%;
+      color: white;
+      font-weight: 900;
+      background-color: #D98218;
+      background: linear-gradient(90deg, #A6550F, #D98218);
+      height: auto;
+      text-align: center;
+      font-size: 20px;
+      padding: 20px;
+    }
+    
+    /* secrtion de cars carrossel. */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      margin: 80px auto;
+      overflow: hidden;
+      height: auto;
+      padding: 30px;
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      gap: 20px;
+      padding: 0 60px;
+    }
+    
+    .card {
+      flex: 0 0 300px;
+      height: 500px;
+      width: 40%;
+      background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      color: white;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      opacity: 0.3;
+      filter: blur(3px);
+      transform: scale(0.95);
+    }
+    
+    .card.active {
+      opacity: 1;
+      filter: none;
+      transform: scale(1.05);
+      box-shadow: 0 3px 10px rgba(255, 140, 0, 0.4);
+      z-index: 2;
+    }
+    
+    .card h2 {
+      font-size: 30px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .card p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+      pointer-events: none;
+    }
+    
+    .controls button {
+      pointer-events: all;
+      padding: 12px 18px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      font-size: 50px;
+      font-weight: 900;
+      cursor: pointer;
+      border-radius: 10%;
+      color: #A6550F;
+    }
+    
+    .X {
+      margin-bottom: 0;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    
+    /* Estilos responsivos */
+    @media (max-width: 1024px) {
+      .homeContainer {
+        width: 50%;
+      }
+      
+      .dorContainer {
+        width: 50%;
+        margin-left: 45%;
+      }
+      
+      .card {
+        flex: 0 0 250px;
+        height: 450px;
+      }
+    }
+    
+    @media (max-width: 800px) {
+      .bg-gradient-katharsis {
+        height: auto;
+        background-image: url(asset/mobileHome.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      .homeContainer {
+        margin-top: 100px;
+        width: 90%;
+        margin-left: 5%;
+      }
+      
+      .logoRr {
+        width: 20%;
+        margin-bottom: 20px;
+      }
+      
+      .title {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      
+      .texto {
+        font-size: 18px;
+        line-height: 22px;
+      }
+      
+      .cardcontainer {
+        text-align: center;
+        width: 30%;
+        padding: 10px;
+        font-weight: 666;
+        border-radius: 5px;
+        font-size: 12px;
+        height: auto;
+      }
+      
+      #dor {
+        height: auto;
+        background-image: url(asset/quemMobile.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      .dorContainer {
+        width: 90%;
+        margin-left: 5%;
+      }
+      
+      .cardsParaQuem {
+        grid-template-columns: 1fr;
+      }
+      
+      .carousel-container {
+        padding: 15px;
+      }
+      
+      .card {
+        flex: 0 0 280px;
+        height: 400px;
+        width: 80%;
+      }
+      
+      .card h2 {
+        font-size: 24px;
+      }
+      
+      .card p {
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .homeContainer {
+        margin-top: 80px;
+      }
+      
+      .title {
+        font-size: 28px;
+      }
+      
+      .texto {
+        font-size: 16px;
+      }
+      
+      .container3cards {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .cardcontainer {
+        width: 100%;
+        border-radius: 10px;
+        padding: 15px;
+      }
+      
+      .card {
+        flex: 0 0 250px;
+        height: 350px;
+      }
+      
+      .controls button {
+        padding: 8px 12px;
+        font-size: 30px;
+      }
     }
   </style>
 </head>
-<body style="background-color: #141414;">
-  <!-- Floating WhatsApp Button -->
-  <a href="#formulario" class="floating-button bg-[#25D366] text-white rounded-full p-4 animate-pulse hover:bg-[#128C7E] transition">
-    <i class="fab fa-whatsapp text-2xl"></i>
-  </a>
-
+<body>
   <!-- Hero Section -->
   <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 bg-gradient-katharsis text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto">
+    <div class="homeContainer">
       <div class="relative z-10">
         <div class="animate-fade">
-          <h1 class="title mb-6  wave-text">
+          <img class="logoRr" src="./asset/logo.webp" autocapitalize="Logo RR"/>
+          <h1 class="title  wave-text">
             <!-- Primeira frase -->
-            <span style="animation-delay:0s">V</span>
-            <span style="animation-delay:0.05s">o</span>
-            <span style="animation-delay:0.1s">c</span>
-            <span style="animation-delay:0.15s">ê</span>
-            <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:0.25s">n</span>
-            <span style="animation-delay:0.3s">ã</span>
+            <span style="animation-delay:0s">T</span>
+            <span style="animation-delay:0.05s">r</span>
+            <span style="animation-delay:0.1s">a</span>
+            <span style="animation-delay:0.15s">n</span>
+            <span style="animation-delay:0.25s">s</span>
+            <span style="animation-delay:0.3s">f</span>
             <span style="animation-delay:0.35s">o</span>
+            <span style="animation-delay:0.2s">r</span>
+            <span style="animation-delay:0.45s">m</span>
+            <span style="animation-delay:0.2s">e</span>
             <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:0.45s">p</span>
-            <span style="animation-delay:0.5s">r</span>
-            <span style="animation-delay:0.55s">e</span>
-            <span style="animation-delay:0.6s">c</span>
-            <span style="animation-delay:0.65s">i</span>
-            <span style="animation-delay:0.7s">s</span>
-            <span style="animation-delay:0.75s">a</span>
+            <span style="animation-delay:0.6s">s</span>
+            <span style="animation-delay:0.65s">u</span>
+            <span style="animation-delay:0.7s">a</span>
             <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:0.85s">d</span>
-            <span style="animation-delay:0.9s">e</span>
-            <span style="animation-delay:0.2s">&nbsp;</span>
-            <br>
-            <span style="animation-delay:1s">m</span>
+            <span style="animation-delay:0.85s">v</span>
+            <span style="animation-delay:0.9s">i</span>
+            <span style="animation-delay:1s">d</span>
             <span style="animation-delay:1.05s">a</span>
-            <span style="animation-delay:1.1s">i</span>
-            <span style="animation-delay:1.15s">s</span>
             <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:1.25s">e</span>
-            <span style="animation-delay:1.3s">s</span>
-            <span style="animation-delay:1.35s">f</span>
-            <span style="animation-delay:1.4s">o</span>
-            <span style="animation-delay:1.45s">r</span>
-            <span style="animation-delay:1.5s">ç</span>
-            <span style="animation-delay:1.55s">o</span>
-            <span style="animation-delay:1.6s">,</span>
-
-            <!-- Quebra de linha -->
-            <br/>
-
-            <!-- Segunda frase -->
+            <span style="animation-delay:1.1s">c</span>
+            <span style="animation-delay:1.15s">o</span>
+            <span style="animation-delay:1.25s">m</span>
             <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:1.7s">p</span>
-            <span style="animation-delay:1.75s">r</span>
-            <span style="animation-delay:1.8s">e</span>
-            <span style="animation-delay:1.85s">c</span>
-            <span style="animation-delay:1.9s">i</span>
-            <span style="animation-delay:1.95s">s</span>
-            <span style="animation-delay:2s">a</span>
-            
+            <span style="animation-delay:1.3s">o</span>
             <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:2.1s">s</span>
-            <span style="animation-delay:2.15s">e</span>
+            <span style="animation-delay:1.35s">M</span>
+            <span style="animation-delay:1.4s">é</span>
+            <span style="animation-delay:1.45s">t</span>
+            <span style="animation-delay:1.5s">o</span>
+            <span style="animation-delay:1.55s">d</span>
+            <span style="animation-delay:1.6s">o</span>
             <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:2.2s"> </span>
-            <span style="animation-delay:2.25s">l</span>
-            <span style="animation-delay:2.3s">i</span>
-            <span style="animation-delay:2.35s">b</span>
-            <span style="animation-delay:2.4s">e</span>
-            <span style="animation-delay:2.45s">r</span>
-            <span style="animation-delay:2.5s">t</span>
-            <span style="animation-delay:2.55s">a</span>
-            <span style="animation-delay:2.6s">r</span>
-            <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:2.7s">d</span>
-            <span style="animation-delay:2.75s">o</span>
-            <span style="animation-delay:0.2s">&nbsp;</span>
-            <span style="animation-delay:2.85s">q</span>
-            <span style="animation-delay:2.85s">u</span>
-            <span style="animation-delay:2.85s">e</span>
-            <span style="animation-delay:2.85s">t</span>
-            <span style="animation-delay:2.85s">e</span>
-            <span style="animation-delay:2.85s">b</span>
-            <span style="animation-delay:2.85s"> l</span>
-            <span style="animation-delay:2.85s"> o</span>
-            <span style="animation-delay:2.85s"> q</span>
-            <span style="animation-delay:2.85s"> u</span>
-            <span style="animation-delay:2.85s"> e</span>
-
-            <span style="animation-delay:2.85s"> i</span>
-            <span style="animation-delay:2.85s"> a.</span>
+            <span class="titlerColor" style="animation-delay:2.85s; ">KATHARSIS.</span>
           </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-2xl opacity-90"><strong>Katharsis:</strong> desbloqueie sua <strong>mente,</strong>  cure suas emoções e libere sua <strong>potência.</strong></p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#formulario" class=" Btn1 inline-block bg-[#3d7e5b] hover:bg-[#2e6a4a] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale">Quero desbloquear minha vida</a>
-            <a href="#sobre" class="bgT bg-white bg-opacity-20 hover:bg-opacity-30 text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale text-center">Conhecer o método</a>
+          <p class="texto">
+            Essa é a chance que você tem de <D>DESTRAVAR</D> tudo aquilo que te <D>IMPEDE DE PROSPERAR</D> na vida.
+          </p>
+          <p class="text2">
+            O Método Katharsis é um processo de autoconhecimento 
+            e autodesenvolvimento, focado em desbloquear traumas 
+            e limitações do passado, criando uma vida com propósito, 
+            prosperidade e autoconfiança. Se você busca transformação pessoal, profissional e 
+            financeira, este é o momento de dar o primeiro passo.
+          </p>
+          <div class="container3cards">
+            <div class="cardcontainer">
+              <p class="corpoCartContainer">Ressignificando Traumas e Dores do Passado</p>
+              <div class="Traco">.</div>
+            </div>
+            
+            <div class="cardcontainer">
+              <p class="corpoCartContainer">Prosperidade e Equilíbrio Emocional</p>
+              <div class="Traco">.</div>
+            </div>
+            
+            <div class="cardcontainer">
+              <p id="tunico" class="corpoCartContainer">Expansão da Consciência</p>
+              <div class="Traco">.</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <div class="divisorBar">.</div>
 
   <!-- Dor e Identificação -->
   <section id="dor" class="py-16 md:py-24 px-6 ">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-5 text-white">Você se identifica com alguma dessas situações?</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto text-white">Estes são os principais sinais de que você precisa do processo Katharsis</p>
+    <div class="dorContainer">
+      <div class="paraQuem animate-fade">
+        <h2 class="text-4xl text-center mb font-bold text-white">Para Quem é o <D>Método?</D></h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto text-white">
+          Este método é perfeito para você que se sente estagnado, repete padrões de comportamento 
+          negativos ou simplesmente quer evoluir em sua jornada pessoal e profissional
+        </p>
       </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-1">
-          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-lock-open text-2xl"></i>
+      <div class="rounded-2xl p-1">
+        <div class="cardsParaQuem grid md:grid-cols-2 gap-6">
+          <div class="TollBorder tool-card rounded-xl p-4 flex items-start">
+            <div class=" text-[#A6550F] w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#A6550F] mb-1">Pessoas que estão se sentindo estagnadas na vida</h4>
+              <p class="text-white opacity-80">
+                Sentir-se preso em uma rotina sem evolução é 
+                frustrante. Este grupo busca uma 
+                mudança significativa para alcançar 
+                seus objetivos e viver com propósito.
+              </p>
+            </div>
           </div>
-          <h3 class="font-semibold text-xl mb-3 text-white">Sente que a vida está parada mesmo tentando avançar</h3>
-          <p style="color:white">Sensação de esforço sem progresso real, como se algo invisível estivesse te segurando.</p>
+          
+          <div class="TollBorder tool-card rounded-xl p-4 flex items-start">
+            <div class=" text-[#A6550F] w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+              <i class="fa-solid fa-thumbs-down"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#A6550F] mb-1">Quem já passou por terapias convencionais sem resultados satisfatórios</h4>
+              <p class="text-white opacity-80">Após tentar várias abordagens terapêuticas, essas pessoas ainda não encontraram a transformação que desejam. Elas estão abertas a novas formas de autoconhecimento e crescimento.</p>
+            </div>
+          </div>
+          
+          <div class="TollBorder tool-card rounded-xl p-4 flex items-start">
+            <div class=" text-[#A6550F] w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+              <i class="fa-solid fa-person-shelter"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#A6550F] mb-1">Aqueles que têm dificuldades em mudar comportamentos como procrastinação e falta de assertividade</h4>
+              <p class="text-white opacity-80">Muitas vezes, a procrastinação e a falta de assertividade impedem o avanço pessoal e profissional. Este grupo quer aprender a tomar decisões rápidas e agir com confiança. </p>
+            </div>
+          </div>
+          
+          <div class="TollBorder tool-card rounded-xl p-4 flex items-start">
+            <div class=" text-[#A6550F] w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+              <i class="fa-duotone fa-solid fa-route"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-[#A6550F] mb-1">Pessoas que se sentem perdidas, sem rumo ou sem propósito</h4>
+              <p class="text-white opacity-80">Sentir-se desconectado de si mesmo e da vida é comum quando não sabemos qual caminho seguir. Essas pessoas buscam clareza, direção e um senso de propósito verdadeiro.</p>
+            </div>
+          </div>
         </div>
-        
-        <!-- Card 2 -->
-        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-2">
-          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-heart text-2xl"></i>
+        <div class="last TollBorder tool-card rounded-xl p-4 flex">
+          <div class=" text-[#A6550F] w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+            <i class="fa-solid fa-person-walking-arrow-loop-left"></i>
           </div>
-          <h3 class="font-semibold text-xl mb-3 text-white">Vive com baixa autoestima ou medo de julgamentos</h3>
-          <p style="color:white">A insegurança te impede de crescer e se expressar plenamente.</p>
-        </div>
-        
-        <!-- Card 3 -->
-        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-3">
-          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-coins text-2xl"></i>
+          <div>
+            <h4 class="font-bold text-[#A6550F] mb-1">Quem ainda carrega traumas do passado e não consegue superá-los</h4>
+            <p class="text-white opacity-80">O peso do passado muitas vezes impede o progresso. Essas pessoas querem se libertar de velhos traumas e encontrar paz interior para viver uma vida mais leve e feliz.</p>
           </div>
-          <h3 class="font-semibold text-xl mb-3 text-white">Sua vida financeira não anda, mesmo com esforço</h3>
-          <p style="color:white">Trabalho sem retorno financeiro visível, como se o dinheiro fugisse de você.</p>
-        </div>
-        
-        <!-- Card 4 -->
-        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-1">
-          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-hourglass-half text-2xl"></i>
-          </div>
-          <h3 class="font-semibold text-xl mb-3 text-white">Se sabota ou procrastina nos momentos mais importantes</h3>
-          <p style="color:white">Você sabe o que precisa fazer, mas algo interno te paralisa na hora de agir.</p>
-        </div>
-        
-        <!-- Card 5 -->
-        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-2">
-          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-users text-2xl"></i>
-          </div>
-          <h3 class="font-semibold text-xl mb-3 text-white">Atrai relações tóxicas ou tem dificuldade em se abrir</h3>
-          <p style="color:white">Os mesmos padrões negativos se repetem em seus relacionamentos.</p>
-        </div>
-        
-        <!-- Card 6 -->
-        <div class="BGT rounded-xl p-6 hover-scale transition animate-fade delay-3">
-          <div class="bg-[#3d7e5b] bg-opacity-10 text-[#3d7e5b] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-brain text-2xl"></i>
-          </div>
-          <h3 class="font-semibold text-xl mb-3 text-white">Traumas passados que ainda afetam seu presente</h3>
-          <p style="color:white">Memórias dolorosas que continuam influenciando suas decisões atuais.</p>
         </div>
       </div>
       
       <div class="text-center mt-16 animate-fade delay-4">
-        <a href="#formulario" class=" Btn1 inline-block bg-[#3d7e5b] hover:bg-[#2e6a4a] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale">Quero resolver essas questões</a>
+        <a href="#formulario" class=" btnParaQuem text-white py-4 px-8  text-lg font-semibold transition hover-scale">Dê o Primeiro Passo para a Mudança</a>
       </div>
     </div>
   </section>
-
+  <div class="divisorBar">.</div>
 
   <!-- Explicação do Método -->
   <section id="sobre" class=" sobre py-16 md:py-24 px-6 text-white">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">O que é o Método Katharsis?</h2>
-        <p class="text-xl max-w-3xl mx-auto opacity-90">Uma jornada de libertação emocional e transformação pessoal</p>
-      </div>
-      
-      <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <div class="lg:w-1/2 animate-fade">
-          <div class="bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-20">
-            <p class="text-lg mb-6">O <span class="font-bold">Método Katharsis</span> é uma imersão transformadora que une o que há de mais poderoso nas abordagens psicológicas, sistêmicas e neurocomportamentais.</p>
-            <p class="text-lg mb-6">Ele conduz o mentorado rumo ao seu objetivo central — com clareza, intensidade e resultados reais.</p>
-            <p class="text-lg">Por meio de análises profundas de comportamento e técnicas avançadas, o método ativa mudanças duradouras, quebra bloqueios inconscientes, crenças limitantes e libera o potencial que estava adormecido.</p>
-          </div>
-          
-          <div class="mt-8 grid sm:grid-cols-2 gap-4 animate-fade delay-2">
-            <div class="bg-white bg-opacity-10 rounded-xl p-4 flex items-center">
-              <div class="bg-[#3d7e5b] w-10 h-10 rounded-full flex items-center justify-center mr-4">
-                <i class="fas fa-check text-white"></i>
-              </div>
-              <span>Resultados rápidos</span>
-            </div>
-            <div class="bg-white bg-opacity-10 rounded-xl p-4 flex items-center">
-              <div class="bg-[#3d7e5b] w-10 h-10 rounded-full flex items-center justify-center mr-4">
-                <i class="fas fa-check text-white"></i>
-              </div>
-              <span>Abordagem holística</span>
-            </div>
-          </div>
+    <h2 class="text-4xl text-center mb font-bold text-white">Como Funciona o <D>processo?</D></h2>
+    <div class="carousel-container">
+      <div class="carousel-track" id="carousel-track">
+        <div class="card active" style="background-image: url(asset/etapa_01.webp)">
+          <h2>Fase 1: Foco no Mental e Emocional</h2>
+          <p>Liberte-se das amarras do passado e deixe para trás as dores que te seguraram. 
+            Esta fase é sobre assumir o controle total da sua vida, deixando o papel de vítima 
+            para trás e se tornando o protagonista da sua jornada. 
+            Ao ressignificar suas experiências, você encontra a força interior para dar o 
+            zprimeiro passo em direção ao crescimento emocional e ao empoderamento pessoal.</p>
         </div>
-        
-        <div class="lg:w-1/2 animate-fade delay-1">
-          <div class="bg-white bg-opacity-5 rounded-2xl p-8">
-            <h3 class="text-xl font-bold mb-6 text-center">Ferramentas utilizadas</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                  <i class="fas fa-brain"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">PNL</h4>
-                  <p class="text-sm opacity-80">Reprogramação de padrões mentais</p>
-                </div>
-              </div>
-              
-              <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                  <i class="fas fa-project-diagram"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">Constelação</h4>
-                  <p class="text-sm opacity-80">Cura de relações familiares</p>
-                </div>
-              </div>
-              
-              <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                  <i class="fas fa-magic"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">Hipnose</h4>
-                  <p class="text-sm opacity-80">Acesso ao inconsciente</p>
-                </div>
-              </div>
-              
-              <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                  <i class="fas fa-atom"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">Apometria</h4>
-                  <p class="text-sm opacity-80">Cura energética multidimensional</p>
-                </div>
-              </div>
-              
-              <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                  <i class="fas fa-book"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">Registro Akáshico</h4>
-                  <p class="text-sm opacity-80">Acesso à memória da alma</p>
-                </div>
-              </div>
-              
-              <div class="tool-card rounded-xl p-4 flex items-start">
-                <div class="bg-[#3d7e5b] text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                  <i class="fas fa-balance-scale"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold mb-1">Coaching Sistêmico</h4>
-                  <p class="text-sm opacity-80">Alinhamento com sistemas</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="card" style="background-image: url(asset/etapa_02.webp)">
+          <h2>Fase 2: Construção de Visão Clara do Futuro</h2>
+          <p>Aqui, sua visão de futuro ganha forma e clareza. Você irá se conectar com suas verdadeiras metas, 
+            fazendo mudanças comportamentais e quebrando as barreiras internas que têm te impedido de 
+            avançar. Este é o momento de tomar decisões conscientes e 
+            começar a agir para criar o futuro que sempre desejou, com confiança e determinação.
+          </p>
+        </div>
+        <div class="card" style="background-image: url(asset/etapa_03.webp)">
+          <h2>Fase 3: Foco no Energético e Espiritual</h2>
+          <p>
+            Chegou a hora de se alinhar com seu propósito maior. Ao se conectar com sua essência e 
+            expandir sua consciência, você descobrirá um novo sentido para sua vida e uma visão mais 
+            profunda do mundo ao seu redor. Nessa fase, a transformação espiritual reforça a 
+            base para todas as mudanças positivas que virão, trazendo clareza e equilíbrio para sua jornada.
+          </p>
+        </div>
+        <div class="card" style="background-image: url(asset/etapa_04.webp)">
+          <h2>Fase 4: Foco na Materialização e Financeiro</h2>
+          <p>
+            Agora é o momento de manifestar suas conquistas. Com foco no crescimento profissional e 
+            financeiro, você criará um caminho sólido para a prosperidade e a abundância em sua vida. 
+            Ao aplicar o que aprendeu, você não apenas transforma seu mundo interior, mas também colhe 
+            os frutos de uma vida de sucesso, com um futuro próspero e cheio de oportunidades.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Benefícios -->
-  <section id="beneficios" class="py-16 md:py-24 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Transformações que você vai alcançar</h2>
-        <p class="text-lg text-white max-w-2xl mx-auto">Os benefícios do processo Katharsis vão além do que você imagina</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Benefício 1 -->
-        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
-          <div class="text-[#3d7e5b] text-4xl mb-4">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <h3 class="font-bold text-xl mb-3">Liberação Emocional</h3>
-          <p class="text-gray-600">Cura de traumas, mágoas e emoções reprimidas que estavam te travando.</p>
-        </div>
-        
-        <!-- Benefício 2 -->
-        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
-          <div class="text-[#3d7e5b] text-4xl mb-4">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3 class="font-bold text-xl mb-3">Prosperidade Financeira</h3>
-          <p class="text-gray-600">Quebra de bloqueios que impediam o fluxo de abundância na sua vida.</p>
-        </div>
-        
-        <!-- Benefício 3 -->
-        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
-          <div class="text-[#3d7e5b] text-4xl mb-4">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3 class="font-bold text-xl mb-3">Relacionamentos Saudáveis</h3>
-          <p class="text-gray-600">Cura de padrões repetitivos que atraíam pessoas e situações tóxicas.</p>
-        </div>
-        
-        <!-- Benefício 4 -->
-        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-1">
-          <div class="text-[#3d7e5b] text-4xl mb-4">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3 class="font-bold text-xl mb-3">Clareza Mental</h3>
-          <p class="text-gray-600">Eliminação da confusão mental e ganho de foco para suas metas.</p>
-        </div>
-        
-        <!-- Benefício 5 -->
-        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-2">
-          <div class="text-[#3d7e5b] text-4xl mb-4">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3 class="font-bold text-xl mb-3">Energia Vital</h3>
-          <p class="text-gray-600">Recuperação da vitalidade e disposição para viver plenamente.</p>
-        </div>
-        
-        <!-- Benefício 6 -->
-        <div class="bgT bg-gray-50 rounded-xl p-8 hover-scale transition animate-fade delay-3">
-          <div class="text-[#3d7e5b] text-4xl mb-4">
-            <i class="fas fa-star"></i>
-          </div>
-          <h3 class="font-bold text-xl mb-3">Propósito de Vida</h3>
-          <p class="text-gray-600">Reconexão com sua missão pessoal e direção clara para o futuro.</p>
-        </div>
-      </div>
-      
-      <div class="bgT mt-16 bg-[#f8f5f2] rounded-2xl p-8 md:p-12 animate-fade delay-4">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="md:w-1/3 text-center">
-            <div class="inline-flex items-center justify-center bg-[#3d7e5b] text-white w-24 h-24 rounded-full text-4xl mb-4">
-              <i class="fas fa-quote-left"></i>
-            </div>
-            <p class="font-bold text-lg">"O Katharsis mudou minha vida em poucas sessões."</p>
-            <p class="text-sm text-gray-600">- Ana C., 34 anos</p>
-          </div>
-          <div class="md:w-2/3">
-            <h3 class="font-bold text-xl mb-4">Depoimento Real</h3>
-            <p class="text-gray-700 mb-4">"Antes do processo, eu me sentia travada em todas as áreas da minha vida. Tinha problemas financeiros, relacionamentos conturbados e uma sensação constante de que não era boa o suficiente."</p>
-            <p class="text-gray-700">"Depois do Katharsis, minha vida deu um giro de 180 graus. Em 3 meses, meu faturamento triplicou, me livrei de um relacionamento tóxico que durava anos e finalmente me senti em paz comigo mesma. A mudança foi tão visível que amigos e familiares comentaram sobre minha transformação."</p>
-          </div>
-        </div>
+      <div class="controls">
+        <button onclick="moveCarousel(-1)">&lt;</button>
+        <button onclick="moveCarousel(1)">&gt;</button>
       </div>
     </div>
   </section>
 
   <!-- Terapeuta -->
-  <section id="terapeuta" class="py-16 md:py-24 px-6 ">
-    <div class="max-w-7xl mx-auto">
+  <section id="terapeuta" class=" ">
+    <div class="X">
       <div class="flex flex-col lg:flex-row gap-12 items-center">
         <div class=" lg:w-1/3 animate-fade">
-          <div class="rounded-2xl shadow-xl overflow-hidden">
-            <img src="asset/about.webp" alt="Rodolfo Ramalho" class="w-full h-auto">
-            <div class="p-6 text-center">
-              <h3 class="text-2xl font-bold mb-2 text-white">Rodolfo Ramalho</h3>
-              <div class="flex justify-center space-x-4">
-                <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="text-gray-600 hover:text-[#3d7e5b]"><i class="fab fa-instagram text-xl"></i></a>
-              </div>
-            </div>
+          <div class="rounded-2xl ">
+            <img src="asset/about.webp" alt="Rodolfo Ramalho" class="w-full h-full">
           </div>
         </div>
         
@@ -567,77 +750,24 @@
       </div>
     </div>
   </section>
-
-  <!-- FAQ 
-  <section class="FAQ py-16 md:py-24 px-6 ">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Perguntas Frequentes</h2>
-        <p class="text-lg text-white">Tire suas dúvidas sobre o Método Katharsis</p>
-      </div>
-      
-      <div class="space-y-4">
-        
-        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-1">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-white">Quantas sessões são necessárias para ver resultados?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 pt-0">
-            <p class="text-gray-600">Os resultados variam de acordo com cada pessoa e a profundidade das questões a serem trabalhadas. Algumas pessoas relatam mudanças significativas já na primeira sessão, enquanto outras podem precisar de 3 a 5 sessões para consolidar a transformação desejada.</p>
-          </div>
-        </div>
-        
-        
-        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-2">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-white">O método funciona online ou precisa ser presencial?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 pt-0">
-            <p class="text-gray-600">O Método Katharsis funciona perfeitamente tanto online quanto presencial. As sessões online são realizadas por videoconferência com a mesma eficácia das presenciais, pois trabalhamos com o campo energético e mental que independe da localização física.</p>
-          </div>
-        </div>
-        
-        
-        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-3">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-white">Preciso ter experiência com terapias para fazer?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 pt-0">
-            <p class="text-gray-600">Não é necessário nenhum conhecimento prévio. O método é adaptável a qualquer pessoa, independente de sua experiência com processos terapêuticos. Rodolfo guiará todo o processo de forma segura e personalizada para suas necessidades.</p>
-          </div>
-        </div>
-        
-        
-        <div class="border border-gray-200 rounded-xl overflow-hidden animate-fade delay-4">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-semibold text-white">Quanto tempo dura cada sessão?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 pt-0">
-            <p class="text-gray-600">Cada sessão tem duração média de 1h30, podendo variar conforme a necessidade do processo. O tempo é suficiente para identificar os padrões limitantes, realizar as intervenções necessárias e consolidar as mudanças.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-12 animate-fade delay-5">
-        <p class="mb-6">Ainda tem dúvidas? Fale conosco pelo WhatsApp:</p>
-        <a href="https://wa.me/5511932223533" class="bgT inline-block bg-[#25D366] hover:bg-[#128C7E] text-white py-3 px-8 rounded-full font-semibold transition hover-scale">
-          <i class="fab fa-whatsapp mr-2"></i> Chamar no WhatsApp
-        </a>
-      </div>
+  <div class="divisorBarForms">
+    <div>
+      <h>A Transformação Começa Agora</h>
     </div>
-  </section>
-  -->
+  </div>
 
   <!-- Formulário -->
-  <section id="formulario" class="FAQ py-16 md:py-24 px-6  text-white">
+  <section id="formulario" class="FAQ  px-6  text-white">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12 animate-fade">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pronto para sua transformação?</h2>
-        <p class="text-xl opacity-90">Preencha o formulário abaixo e daremos início ao seu processo Katharsis</p>
+        <p class="text-xl opacity-90">
+          <br/>
+          <br/>
+          <br/>
+          Com o Método <D>Katharsis</D>, você será guiado em uma jornada de <D>auto-descoberta</D> e 
+          empoderamento, que resultará em uma <D>nova vida com resultados palpáveis</D>. 
+          Não deixe mais um dia passar sem dar o primeiro passo.<br/>
+          <D>Preencha</D> o formulário abaixo e daremos início ao seu processo Katharsis</p>
       </div>
       
       <div class="bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-20 animate-fade delay-1">
@@ -662,68 +792,53 @@
             <textarea id="mensagem" rows="4" placeholder="Descreva brevemente o que você gostaria de transformar" class="w-full px-5 py-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-30 focus:outline-none transition placeholder-white placeholder-opacity-70" required></textarea>
           </div>
           
-          <button type="submit" class="bgT bg-[#3d7e5b] text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale flex items-center justify-center">
+          <button type="submit" style="background: linear-gradient(90deg, #A6550F, #D98218);" class="w-full text-white py-4 px-8 rounded-full text-lg font-semibold transition hover-scale flex items-center justify-center">
             <span>Quero iniciar meu processo</span>
             <i class="fas fa-arrow-right ml-3"></i>
           </button>
         </form>
       </div>
-      
-      <div class=" text-center mt-12 animate-fade delay-2">
-        <div class="bgT inline-flex items-center bg-white bg-opacity-20 rounded-full px-6 py-3">
-          <i class="fas fa-lock mr-2"></i>
-          <span>Seus dados estão 100% seguros conosco</span>
-        </div>
-      </div>
+      <br/>
+      <br/>
+      <br/>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-[#2a2a2a] text-white py-12 px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-12">
+      <div class="grid md:grid-cols-3 gap-20">
         <div>
-          <h3 class="text-2xl font-bold text-[#25D366] mb-4">Katharsis</h3>
+          <h3 class="text-2xl font-bold mb-4">Katharsis</h3>
           <p class="opacity-80">Liberte sua mente, cure suas emoções e libere sua potência.</p>
         </div>
         
         <div>
-          <h4 class="text-[#25D366] font-bold mb-4">Links Rápidos</h4>
+          <h4 class="font-bold mb-4">Contato</h4>
           <ul class="space-y-2">
-            <li><a href="#home" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Início</a></li>
-            <li><a href="#sobre" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">O Método</a></li>
-            <li><a href="#beneficios" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Benefícios</a></li>
-            <li><a href="#terapeuta" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Terapeuta</a></li>
-            <li><a href="#formulario" class="opacity-80 hover:opacity-100 hover:text-[#b08c6d] transition">Agendar</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="text-[#25D366] font-bold mb-4">Contato</h4>
-          <ul class="space-y-2">
-            <li class=" flex items-center">
-              <i class="text-[#25D366] fas fa-envelope mr-3 "></i>
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-3"></i>
               <span class="opacity-80">contato@metodokatharsis.com</span>
             </li>
             <li class="flex items-center">
-              <i class="fab fa-whatsapp mr-3 text-[#25D366]"></i>
+              <i class="fab fa-whatsapp mr-3"></i>
               <span class="opacity-80">(11) 93222-3533</span>
             </li>
           </ul>
         </div>
         
         <div>
-          <h4 class="text-[#25D366] font-bold mb-4">Redes Sociais</h4>
+          <h4 class="font-bold mb-4">Redes Sociais</h4>
           <div class="flex space-x-4">
-            <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="text-[#25D366] hover:bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center transition">
-              <i class=" fab fa-instagram"></i>
+            <a href="https://www.instagram.com/eusourodolforamalho/" target="_blank" class="hover:bg-[#b08c6d] w-10 h-10 rounded-full flex items-center justify-center transition">
+              <i class="fab fa-instagram"></i>
             </a>
           </div>
         </div>
       </div>
       
       <div class="border-t border-[#3d3d3d] mt-12 pt-8 text-center opacity-70 text-sm">
-        <p class="text-[#25D366]">&copy; 2023 Método Katharsis. Todos os direitos reservados.</p>
+        <p class="">&copy; 2023 Método Katharsis. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
@@ -736,18 +851,6 @@
       menu.classList.toggle('hidden');
     });
     
-    // FAQ toggle
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('i');
-        
-        content.classList.toggle('hidden');
-        icon.classList.toggle('transform');
-        icon.classList.toggle('rotate-180');
-      });
-    });
-    
     // Form submission for WhatsApp
     document.getElementById('katharsis-form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -757,9 +860,17 @@
       const whatsapp = document.getElementById('whatsapp').value;
       const mensagem = document.getElementById('mensagem').value;
       
-      const texto = `Olá! Gostaria de saber mais sobre o Método Katharsis.%0A%0A*Nome:* ${nome}%0A*E-mail:* ${email}%0A*WhatsApp:* ${whatsapp}%0A*Mensagem:* ${mensagem}`;
-      const url = `https://wa.me/5511932223533?text=${encodeURIComponent(texto)}`;
+      // Formatando a mensagem para o WhatsApp
+      const texto = `*NOVO INTERESSADO NO MÉTODO KATHARSIS*%0A%0A*Nome:* ${nome}%0A*E-mail:* ${email}%0A*WhatsApp:* ${whatsapp}%0A%0A*Principal dor/objetivo:*%0A${mensagem}%0A%0A_Formulário preenchido através do site Método Katharsis_`;
+      
+      // Criando o link do WhatsApp
+      const url = `https://wa.me/5511932223533?text=${texto}`;
+      
+      // Abrindo o WhatsApp em uma nova aba
       window.open(url, '_blank');
+      
+      // Resetando o formulário
+      this.reset();
     });
     
     // Scroll animations
@@ -779,6 +890,34 @@
     
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
+  </script>
+  
+  <script>
+    const track = document.getElementById('carousel-track');
+    const cards = document.querySelectorAll('.card');
+    let currentIndex = 0;
+    
+    function updateCarousel() {
+      cards.forEach(card => card.classList.remove('active'));
+      cards[currentIndex].classList.add('active');
+      
+      const offset = currentIndex * (320);
+      track.style.transform = `translateX(calc(50% - ${offset}px - 150px))`;
+    }
+    
+    function moveCarousel(direction) {
+      currentIndex += direction;
+      
+      if (currentIndex < 0) {
+        currentIndex = cards.length - 1;
+      } else if (currentIndex >= cards.length) {
+        currentIndex = 0;
+      }
+      
+      updateCarousel();
+    }
+    
+    updateCarousel();
   </script>
 </body>
 </html>

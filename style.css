@@ -1,0 +1,377 @@
+body {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .animate-fade {
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    .delay-5 { animation-delay: 1s; }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    .bg-gradient-katharsis {
+      height: 100vh;
+      background-image: url(asset/rodolroBGF.webp);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .homeContainer {
+        margin-top: 100px;
+        margin-left: 5%;
+        width: 40%;
+    }
+    .logoRr{
+      width: 10%;
+      margin-bottom: 20px;
+    }
+    .title{
+        font-size: 40px;   
+    }
+    .titlerColor{
+        color:#D98218;
+        text-decoration: underline;
+    }.texto{
+        font-size: 23px;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+    D{
+        font-weight: 900;
+        color:#D98218;
+    }
+    .text2 {
+        line-height: 17px;
+    }
+    .container3cards {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .cardcontainer {
+        text-align: center;
+        width: 30%;
+        height: 80px;
+        padding-top: 10px;
+        font-weight: 666;
+        border-radius:100%;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: end;
+    }
+    .divisorBar{
+        width: 100%;
+        padding: 1px;
+        color: #D98218;
+        background-color: #D98218;
+        box-shadow: 2px 2px 15px #A6550F;
+        font-size: 1px;
+    }
+    .corpoCartContainer {
+        margin-top: 10px;
+    }
+    .Traco{
+        width: 100%;
+        background-color: #A6550F;
+        font-size: 3px;
+        color: #A6550F;
+        box-shadow: 2px 2px 15px #A6550F;
+        border-radius: 10px;
+        bottom: 0;
+    }
+    #dor{
+        height: auto;
+        background-image: url(asset/quem.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .dorContainer {
+        width: 40%;
+        margin-left: 50%;
+    }
+    .cardsParaQuem {
+        margin-top: 60px;
+    }
+    .last {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .TollBorder {        
+        box-shadow: 2px 2px 15px #A6550F;
+    }
+    .btnParaQuem{
+      border-radius: 15px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #A6550F, #D98218);
+    }
+    .btnParaQuem:hover{
+      box-shadow: 2px 2px 15px #A6550F;
+    }
+
+    @media(max-width: 800px){
+        #tunico {
+
+        }
+        .bg-gradient-katharsis {
+        height: auto;
+        background-image: url(asset/mobileHome.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .homeContainer {
+        margin-top: -100px;
+        width: 100%;
+      }.logoRr{
+        width: 20%;
+        margin-bottom: 20px;
+      }
+      .title{
+        font-size: 41px;
+        margin-bottom: 20px;
+      }
+      .subTitle{
+        font-size: 15px;
+        }
+        .cardcontainer {
+            text-align: center;
+            width: 30%;
+            padding: 10px;
+            font-weight: 666;
+            border-radius: 5px;
+            font-size: 9px;
+        }
+        #dor{
+        height: auto;
+        background-image: url(asset/quemMobile.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        .dorContainer {
+        width: 90%;
+        margin-left: 5%;
+        }
+    
+    }
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-scale:hover {
+      transform: scale(1.03);
+    }
+    
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #b08c6d;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .testimonial-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.918);
+    }
+    
+    .tool-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .floating-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      box-shadow: 0 10px 25px rgba(61, 126, 91, 0.3);
+    }
+    .wave-text {
+      display: flex;
+      flex-wrap: wrap;
+      font-weight: bold;
+      line-height: 1.2;
+      max-width: 800px;
+    }
+
+    .wave-text span {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: wave 0.5s forwards;
+      display: inline-block;
+    }
+    .BGT {
+      background-color: #ffffff2f;
+      backdrop-filter: blur(5px);
+      box-shadow: 2px 2px 2px green;
+      cursor: pointer;
+    }
+    .bgT:hover{
+      cursor: pointer;
+      box-shadow: 2px 2px 15px green;
+    }
+    .BGT:hover {
+      box-shadow: 2px 2px 15px green;
+    }
+    .Btn1:hover{
+      box-shadow: 2px 2px 10px green;
+    }
+    #sobre {
+      height: 100vh;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .FAQ {
+      background-image: url(asset/fundofaq.webp);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @keyframes wave {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .title{
+      font-size: 40px;
+    }
+
+.divisorBarForms{
+  width: 100%;
+  color: white;
+  font-weight: 900;
+  background-color: #D98218;
+  background: linear-gradient(90deg, #A6550F, #D98218);
+  height: auto;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+}
+ /*
+ secrtion de cars carrossel.
+ */
+.carousel-container {
+      position: relative;
+      width: 100%;
+      margin: 80px auto;
+      overflow: hidden;
+      height: auto;
+      padding: 30px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      gap: 20px;
+      padding: 0 60px;
+    }
+    .card {
+      flex: 0 0 300px;
+      height: 500px;
+      width: 40%;
+      background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      color: white;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      opacity: 0.3;
+      filter: blur(3px);
+      transform: scale(0.95);
+    }
+    .card.active {
+      opacity: 1;
+      filter: none;
+      transform: scale(1.05);
+      box-shadow: 0 3px 10px rgba(255, 140, 0, 0.4);
+      z-index: 2;
+    }
+    .card h2 {
+      font-size: 30px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+    .card p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+      pointer-events: none;
+    }
+    .controls button {
+      pointer-events: all;
+      padding: 12px 18px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      font-size: 50px;
+      font-weight: 900;
+      cursor: pointer;
+      border-radius: 10%;
+      color: #A6550F;
+    }
+    .X {
+        margin-bottom: 0;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
